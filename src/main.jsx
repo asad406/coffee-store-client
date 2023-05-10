@@ -19,7 +19,7 @@ const router = createBrowserRouter([
     },
     {
         path: '/updateCoffee',
-        element:<UpdateCoffee></UpdateCoffee>
+        element:<UpdateCoffee></UpdateCoffee>,
     },
     
 ]);
