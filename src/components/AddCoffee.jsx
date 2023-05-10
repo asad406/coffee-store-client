@@ -1,5 +1,6 @@
 /* eslint-disable no-unused-vars */
 import React from 'react';
+import Swal from 'sweetalert2'
 
 const AddCoffee = () => {
     const handleAdd = e => {
@@ -24,7 +25,14 @@ const AddCoffee = () => {
         })
         .then(res => res.json())
         .then(data => {
-            console.log(data)
+            if(data.insertedId){
+                Swal.fire({
+                    title: 'Successful!',
+                    text: 'New Coffee Added',
+                    icon: 'success',
+                    confirmButtonText: 'Cool'
+                  })
+            }
         })
     }
     return (
