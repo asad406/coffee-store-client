@@ -30,7 +30,7 @@ const AddCoffee = () => {
                     title: 'Successful!',
                     text: 'New Coffee Added',
                     icon: 'success',
-                    confirmButtonText: 'Cool'
+                    confirmButtonText: 'OK'
                   })
             }
         })
