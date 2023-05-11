@@ -24,11 +24,13 @@ const CoffeeCard = ({ coffee }) => {
                 })
                     .then((res) => res.json())
                     .then((data) => {
-                        Swal.fire(
-                            'Deleted!',
-                            'Your file has been deleted.',
-                            'success'
-                        );
+                        if (data.deletedCount > 0) {
+                            Swal.fire(
+                                'Deleted!',
+                                'Your file has been deleted.',
+                                'success'
+                            );
+                        }
                     });
             }
         });
@@ -51,7 +53,9 @@ const CoffeeCard = ({ coffee }) => {
                 <div className="card-actions justify-end">
                     <div className="btn-group btn-group-vertical space-y-2 ">
                         <button className="btn">View</button>
-                        <Link to={`/updateCoffee/${_id}`}><button className="btn">Edit</button></Link>
+                        <Link to={`/updateCoffee/${_id}`}>
+                            <button className="btn">Edit</button>
+                        </Link>
                         <button
                             onClick={() => handleDelete(_id)}
                             className="btn"
